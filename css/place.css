@@ -1,0 +1,1078 @@
+/* =========================================
+   GLOBAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080a18;
+    color: white;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+/* .navbar {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    z-index: 1000;
+
+    display: flex;
+    gap: 10px;
+
+    padding: 8px;
+
+    background: rgba(20, 22, 40, 0.75);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 50px;
+
+    backdrop-filter: blur(15px);
+}
+
+.nav-item {
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    text-decoration: none;
+
+    font-size: 22px;
+
+    border-radius: 50%;
+
+    transition: 0.3s ease;
+}
+
+.nav-item span {
+    position: absolute;
+
+    top: 62px;
+
+    background: rgba(10, 12, 25, 0.9);
+
+    padding: 6px 10px;
+
+    border-radius: 8px;
+
+    font-size: 11px;
+
+    color: white;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: 0.3s ease;
+}
+
+.nav-item:hover span {
+    opacity: 1;
+}
+
+.nav-item:hover {
+    transform: translateY(-4px);
+}
+
+.nav-item.active {
+    background: rgba(255, 255, 255, 0.18);
+
+    box-shadow:
+        0 0 20px rgba(120, 130, 255, 0.35);
+
+} */
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    height: 100vh;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.hero img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: brightness(0.62);
+
+    transform: scale(1.03);
+
+    animation: heroZoom 12s ease-in-out infinite alternate;
+}
+
+@keyframes heroZoom {
+
+    from {
+        transform: scale(1.03);
+    }
+
+    to {
+        transform: scale(1.1);
+    }
+
+}
+
+.hero-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(5, 7, 18, 0.15),
+            rgba(5, 7, 18, 0.72)
+        );
+}
+
+.location-icon {
+    font-size: 42px;
+
+    animation: floating 2s ease-in-out infinite;
+}
+
+@keyframes floating {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+.hero h1 {
+    font-size: clamp(70px, 12vw, 170px);
+
+    letter-spacing: 15px;
+
+    margin-left: 15px;
+
+    text-shadow:
+        0 5px 30px rgba(0, 0, 0, 0.7);
+}
+
+.gujarat {
+    font-size: 18px;
+
+    letter-spacing: 10px;
+
+    margin-top: 5px;
+}
+
+.scroll-down {
+    margin-top: 70px;
+
+    font-size: 35px;
+
+    animation: down 1.5s infinite;
+}
+
+@keyframes down {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(12px);
+    }
+
+}
+
+
+/* =========================================
+   INTRO
+========================================= */
+
+.intro {
+    min-height: 50vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #171936,
+            #080a18 70%
+        );
+}
+
+.intro-symbol {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+.intro h2 {
+    font-size: 42px;
+
+    letter-spacing: 8px;
+}
+
+.intro-line {
+    width: 100px;
+
+    height: 2px;
+
+    margin: 25px;
+
+    background: white;
+
+    opacity: 0.5;
+}
+
+.intro-icons {
+    display: flex;
+
+    gap: 40px;
+
+    font-size: 38px;
+}
+
+.intro-icons div {
+    transition: 0.3s ease;
+}
+
+.intro-icons div:hover {
+    transform: translateY(-10px) scale(1.2);
+}
+
+
+/* =========================================
+   FEATURE SECTIONS
+========================================= */
+
+.feature-section {
+    min-height: 75vh;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    background: #0c0f22;
+}
+
+.feature-section:nth-of-type(even) {
+    background: #10132b;
+}
+
+.feature-image {
+    height: 75vh;
+    
+    overflow: hidden;
+}
+
+.feature-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.7s ease;
+}
+
+.feature-image:hover img {
+    transform: scale(1.07);
+}
+
+.feature-content {
+    text-align: center;
+
+    padding: 50px;
+}
+
+.big-icon {
+    font-size: 70px;
+
+    margin-bottom: 20px;
+}
+
+.feature-content h2 {
+    font-size: 55px;
+
+    letter-spacing: 8px;
+}
+
+.feature-content h3 {
+    font-size: 25px;
+
+    letter-spacing: 5px;
+
+    margin-top: 10px;
+}
+
+.small-line {
+    width: 80px;
+
+    height: 2px;
+
+    margin: 25px auto;
+
+    background: white;
+
+    opacity: 0.5;
+}
+
+.feature-content p {
+    font-size: 30px;
+
+    letter-spacing: 10px;
+}
+
+.textile-icons {
+    font-size: 35px;
+
+    margin-top: 25px;
+}
+
+
+/* =========================================
+   TAPI RIVER
+========================================= */
+
+.river-section {
+    height: 80vh;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.river-section img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    filter: brightness(0.6);
+
+    transition: 1s ease;
+}
+
+.river-section:hover img {
+    transform: scale(1.05);
+}
+
+.river-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.5)
+        );
+}
+
+.river-icon {
+    font-size: 70px;
+}
+
+.river-overlay h2 {
+    font-size: 90px;
+
+    letter-spacing: 20px;
+
+    margin-left: 20px;
+}
+
+.river-line {
+    width: 100px;
+
+    height: 2px;
+
+    background: white;
+
+    margin: 20px;
+}
+
+.river-icons {
+    font-size: 35px;
+}
+
+
+/* =========================================
+   COMMON SECTION HEADING
+========================================= */
+
+.section-heading {
+    text-align: center;
+
+    padding: 90px 20px 50px;
+}
+
+.heading-icon {
+    font-size: 50px;
+
+    margin-bottom: 15px;
+}
+
+.section-heading h2 {
+    font-size: 45px;
+
+    letter-spacing: 7px;
+}
+
+.heading-line {
+    width: 100px;
+
+    height: 2px;
+
+    background: white;
+
+    opacity: 0.5;
+
+    margin: 25px auto 0;
+}
+
+
+/* =========================================
+   FOOD
+========================================= */
+
+.food-section {
+    background: #080a18;
+
+    padding-bottom: 100px;
+}
+
+.food-gallery {
+    width: 90%;
+
+    max-width: 1300px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    grid-auto-rows: 230px;
+
+    gap: 18px;
+}
+
+.food-card {
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    position: relative;
+
+    box-shadow:
+        0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.food-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 0.6s ease;
+}
+
+.food-card:hover img {
+    transform: scale(1.1);
+}
+
+.food-large {
+    grid-column: span 2;
+
+    grid-row: span 2;
+}
+
+
+/* =========================================
+   PLACES
+========================================= */
+
+.places-section {
+    background:
+        linear-gradient(
+            135deg,
+            #10132b,
+            #080a18
+        );
+
+    padding-bottom: 120px;
+}
+
+.places-container {
+    width: 90%;
+
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+
+    align-items: center;
+}
+
+.place-card {
+    height: 430px;
+
+    border-radius: 25px;
+
+    overflow: hidden;
+
+    position: relative;
+
+    transform: rotate(-2deg);
+
+    transition: 0.5s ease;
+
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.place-card:nth-child(2) {
+    transform: rotate(0deg) scale(1.08);
+}
+
+.place-card:nth-child(3) {
+    transform: rotate(2deg);
+}
+
+.place-card:hover {
+    transform:
+        rotate(0deg)
+        scale(1.05);
+
+    z-index: 5;
+}
+
+.place-card img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.place-icon {
+    position: absolute;
+
+    bottom: 20px;
+    right: 20px;
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.65);
+
+    border-radius: 50%;
+
+    font-size: 25px;
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================================
+   CULTURE
+========================================= */
+
+.culture-section {
+    height: 150vh;
+
+    padding: 60px;
+
+    background: #080a18;
+}
+
+.culture-image {
+    width: 100%;
+    height: 90%;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+}
+
+.culture-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: 1s ease;
+}
+
+.culture-image:hover img {
+    transform: scale(1.05);
+}
+
+.culture-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.05),
+            rgba(0, 0, 0, 0.6)
+        );
+}
+
+.culture-icon {
+    font-size: 65px;
+}
+
+.culture-overlay h2 {
+    font-size: 80px;
+
+    letter-spacing: 12px;
+
+    margin-left: 12px;
+}
+
+.culture-icons {
+    font-size: 38px;
+
+    margin-top: 20px;
+}
+
+
+/* =========================================
+   VIDEO
+========================================= */
+
+.video-section {
+    background: #10132b;
+
+    padding-bottom: 120px;
+}
+
+.video-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px auto;
+    /* width: 85%;
+    height: 700px;
+    max-width: 1200px;
+
+    margin: auto;
+
+    position: relative;
+
+    padding: 8px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.25),
+            rgba(255,255,255,0.03)
+        );
+
+    border-radius: 25px; */
+}
+
+.video-container video {
+    width: 360px;
+    height: 640px;
+    object-fit: contain;
+    display: block;
+    border-radius: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+    /* width: 100%;
+    height: 100%;
+    display: block;
+
+    border-radius: 18px;
+
+    max-height: 650px;
+
+    object-fit: cover; */
+}
+
+
+/* Video decorative corners */
+
+.video-corner {
+    position: absolute;
+
+    width: 35px;
+    height: 35px;
+
+    border-color: white;
+
+    opacity: 0.7;
+}
+
+.top-left {
+    top: -8px;
+    left: -8px;
+
+    border-top: 3px solid;
+    border-left: 3px solid;
+
+    border-radius: 15px 0 0 0;
+}
+
+.top-right {
+    top: -8px;
+    right: -8px;
+
+    border-top: 3px solid;
+    border-right: 3px solid;
+
+    border-radius: 0 15px 0 0;
+}
+
+.bottom-left {
+    bottom: -8px;
+    left: -8px;
+
+    border-bottom: 3px solid;
+    border-left: 3px solid;
+
+    border-radius: 0 0 0 15px;
+}
+
+.bottom-right {
+    bottom: -8px;
+    right: -8px;
+
+    border-bottom: 3px solid;
+    border-right: 3px solid;
+
+    border-radius: 0 0 15px 0;
+}
+
+
+/* =========================================
+   ENDING
+========================================= */
+
+.ending {
+    min-height: 55vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle,
+            #191d42,
+            #080a18 70%
+        );
+}
+
+.ending-icon {
+    font-size: 55px;
+
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+
+}
+
+.ending h2 {
+    font-size: 55px;
+
+    letter-spacing: 8px;
+
+    margin-top: 20px;
+}
+
+.ending-symbols {
+    font-size: 35px;
+
+    margin-top: 25px;
+}
+
+.ending-line {
+    width: 120px;
+
+    height: 2px;
+
+    background: white;
+
+    opacity: 0.4;
+
+    margin: 30px;
+}
+
+.home-symbol {
+    font-size: 35px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    height: 100px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 30px;
+
+    background: #050611;
+}
+
+footer a {
+    text-decoration: none;
+
+    font-size: 25px;
+
+    opacity: 0.6;
+
+    transition: 0.3s ease;
+}
+
+footer a:hover {
+    opacity: 1;
+
+    transform: translateY(-5px);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 900px) {
+
+    .hero h1 {
+        font-size: 70px;
+
+        letter-spacing: 8px;
+    }
+
+    .feature-section {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-section .feature-image {
+        height: 50vh;
+    }
+
+    .textile-section .feature-content {
+        order: 2;
+    }
+
+    .textile-section .feature-image {
+        order: 1;
+    }
+
+    .food-gallery {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .places-container {
+        grid-template-columns: 1fr;
+    }
+
+    .place-card {
+        height: 400px;
+
+        transform: none !important;
+    }
+
+    .culture-section {
+        height: 60vh;
+
+        padding: 25px;
+    }
+
+    .culture-overlay h2 {
+        font-size: 50px;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+        top: 10px;
+    }
+
+    .nav-item {
+        width: 45px;
+        height: 45px;
+
+        font-size: 19px;
+    }
+
+    .nav-item span {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 48px;
+
+        letter-spacing: 5px;
+    }
+
+    .gujarat {
+        font-size: 13px;
+
+        letter-spacing: 5px;
+    }
+
+    .intro h2 {
+        font-size: 30px;
+    }
+
+    .intro-icons {
+        gap: 20px;
+
+        font-size: 28px;
+    }
+
+    .feature-content h2 {
+        font-size: 40px;
+    }
+
+    .feature-content h3 {
+        font-size: 18px;
+    }
+
+    .river-overlay h2 {
+        font-size: 55px;
+
+        letter-spacing: 12px;
+    }
+
+    .section-heading h2 {
+        font-size: 32px;
+    }
+
+    .food-gallery {
+        grid-template-columns: 1fr;
+
+        grid-auto-rows: 250px;
+    }
+
+    .food-large {
+        grid-column: span 1;
+
+        grid-row: span 1;
+    }
+
+    .culture-overlay h2 {
+        font-size: 38px;
+
+        letter-spacing: 5px;
+    }
+
+    .culture-section {
+        height: 50vh;
+
+        padding: 15px;
+    }
+
+    .ending h2 {
+        font-size: 35px;
+    }
+
+}
